@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co/gTgdWjH/pediatrics.jpg",
+        "serviceName": "Pediatrics",
+        "shortDetails": "Our pediatric services utilizes state technology and employs team of experts for pediatric.",
+        "details": "The Pediatric Clinic routinely has Pediatric Specialty Physicians visit the Pediatric Clinic. Specialty physicians are available routinely for Pediatric Cardiology, Pediatric Hematology/Oncology and Pediatric Surgery. The Pediatric Clinic provides services to assist patients with ADD/ADHD.\n The Pediatric Clinic strives to prescribe medication only when necessary.  To ensure the patient has ADD/ADHD, the Pediatric Clinic has a protocol which is followed.  If you believe your child struggles with ADD/ADHD, the provider will spend time to examine and consult with the parents.  ADD/ADHD consultation appointments are scheduled by the provider's nurse.  They are not scheduled through the normal appointment process."
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co/SntM7Lg/neurology.jpg",
+        "serviceName": "Neurology",
+        "shortDetails": "We offer for severals services helps with yours neurological condition our patient services.",
+        "details": "Our neurology service offers diagnosis and treatment to patients with diseases of the nervous system.Neurology is a broad specialty covering lots of different conditions. Information on specific conditions can be found on the NHS website.\n Our neurology department is based at both Guy's and St Thomas' and has access to a number of special facilities including: \n EEG/EMG services (see neurophysiology for details)\n neuroradiology,including MRI and PET scanning \n neuromuscular respiratory services including treatment of Guillain-Barré syndrome \n specialist in-patient wards including the Lane-Fox Unit for respiratory failure and sleep disorders at St Thomas'."
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co/YfM9cQd/pulmonary.jpg",
+        "serviceName": "Pulmonary",
+        "shortDetails": "Our endoscopic procedures is include is the bronchoscopys, thoracentesis,& tube insertion.",
+        "details": "Pulmonary services features a team of highly trained and experienced doctors, nurses and support staff that provides comprehensive pulmonary health services with a special emphasis on advanced diagnosis, education and prevention. The team uses sophisticated technology for diagnosis and treatment of respiratory issues and lung disease. Through our pulmonary affiliation with Penn Medicine, Shore offers patients the highest levels of medical expertise and care, the latest advances and techniques as well as access to a Penn Medicine interventional pulmonologist in our state-of-the art facilities. \n Our physicians have a wealth of experience in diagnosing and treating complex lung diseases and illnesses. A full array of specialists work closely with you to reach a correct diagnosis, find the best available treatment and manage symptoms so you can achieve the best quality of life. If you've received a difficult diagnosis, we can offer comprehensive pulmonology diagnostics and thoughtful second opinions."
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co/DKLnc3p/laboratory.jpg",
+        "serviceName": "laboratory",
+        "shortDetails": "In an our laboratory, You pass wide a range of the tests that allows us to n diagnosis tests.",
+        "details": "Medical Laboratory Services builds long term relationships with our referring physicians and patients by providing high quality pathology services. We are committed to providing you with fast turnaround time, continuity of care, tailored reports and custom report delivery. \n We are a community based laboratory with strong ties to the local hospitals and physicians. We can provide a full range of anatomic pathology and cytology services and will customize the reports to accommodate your specifications. We also offer the ability for you to have direct access to reports from your computer."
+    },
+    {
+        "id": 5,
+        "image": "https://i.ibb.co/N33xvVj/x-ray.jpg",
+        "serviceName": "X-Ray",
+        "shortDetails": "We offers a greats x-ray cares including cosmetic and an oral dental implant emergency care.",
+        "details": "X-ray images are created using a machine that sends x-ray particles through the body. The x-ray particles themselves are called photons, and they allow a specialized film or computer to capture the images that are created.\n Dense bodily structures, like bone or metal, can prevent most x-ray particles from traveling through them. On the x-ray image, this causes these structures to look white. If a structure contains air, it will appear black on the image created. Muscles, fat, and fluids appear in various gray shades."
+    },
+    {
+        "id": 6,
+        "image": "https://i.ibb.co/WB2JJ8s/cardiology.jpg",
+        "serviceName": "Cardiology",
+        "shortDetails": "Your heart is the best hands state-of-the-arts cardiovascu-lar of the cardiology institute.",
+        "details": "Medislick is the only hospital in the nation with statistically better mortality rates in all six of the Centers for Medicare and Medicaid Services (CMS) 30-day mortality measures: heart failure, pneumonia, COPD, heart attack, stroke, and coronary artery bypass graft. Ranked as one of the top four cardiac programs in the country — partnering with NewYork-Presbyterian, the #4 best hospital in the nation and #1 in New York, according to U.S. News and World Report — we use the latest scientific breakthroughs to provide comprehensive care for one of the most prevalent diseases nationwide. According to the federal government, more than 1 in 3 adults, or 81.1 million people, live with one or more types of cardiovascular disease.\n Our providers treat cardiac disorders and conditions through several specialized programs that address arrhythmias, peripheral arterial disease, congestive heart failure, heart attack, pulmonary hypertension, adult congenital heart diseases, coronary artery disease, valvular heart disease and Marfan syndrome and related disorders."
+    },
+    {
+        "id": 7,
+        "image": "https://i.ibb.co/j4fTrCx/dental.jpg ",
+        "serviceName": "Dental Care",
+        "shortDetails": "Our paediatric services utilizes state technology and employs team of experts for paediatric.",
+        "details": "We accommodate overseas patients who are usually pressed for time by offering full mouth dental treatment procedures within a short span of time.\n We have consultants specialised in varied branches of dentistry, both general and cosmetic. Please find on this page a list of consultants that offer their services at our clinic.\n At least one of our branches is open on Sundays and other holidays to handle emergency cases.Payments are acceptable through cash (within limits permissible by applicable laws), cheques and credit / debit cards.\n For those who cannot afford these services, we also have charitable dental units set up at our clinics at Walkeshwar and Metro areas. Be assured that the quality of our services at these units are at par with the quality of services at our regular clinics. We do not compromise on quality and hygiene, and continually strive to improve patient comfort.\n Foreigners may also avail of a special sightseeing tour of the city through our clinic, an additional service we offer as a gesture of welcoming guests into our city. Contact us for more information and details."
+    },
+    {
+        "id": 8,
+        "image": "https://i.ibb.co/88j82SV/eye-care.jpg*/",
+        "serviceName": "Eye-Care",
+        "shortDetails": "Ours eye care services utilizes state technology and employs team of experts for paediatric.",
+        "details": "Patients are one of the most powerful stakeholders in healthcare. They have the power to choose from many providers in the eye care marketplace and switch providers as they see fit. What’s the secret to getting patients to choose and stay with YOU? High-quality customer service.\n If you want to run a successful eye care practice—one that is profitable and productive—you have to deliver the best customer service possible. Your optometric business solutions are inextricably linked to your financial future, and can change how patients feel about your practice. In fact, data shows that the happier your patients are, the faster they pay their medical bills. So for optometrists and ophthalmologists who are committed to building a successful practice, prioritizing customer service is not optional.\n Providing the highest quality customer service requires the dedication of your entire office. All physicians and staff need to be on board with treating patients like gold. But great customer service starts with your front line staff. The face of your office—front desk employees and techs—see and talk to patients the most. They especially need to know how to keep current patients happy and new patients coming back. And sometimes that means going back to the basics."
+    }
+]
