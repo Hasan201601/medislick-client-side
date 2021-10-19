@@ -15,10 +15,17 @@
     padding:10px 15px
 }
 .btn-custom-dark{
+    background-color: #033b4a;
+    color: white;
+}
+.btn-custom-dark:hover{
+    background-color: #01d6a3; 
+}
+.btn-custom-outline-dark{
     border: 1px solid #033b4a;
     color: #033b4a;
 }
-.btn-custom-dark:hover{
+.btn-custom-outline-dark:hover{
     background-color: #033b4a;
     color: white;
 }
@@ -27,6 +34,14 @@
     background-color: #01d6a3;  
 }
 .btn-custom-info:hover{
-    color: white;
     background-color: #033b4a;
+}
+.btn-custom-outline-info{
+    border: 1px solid #01d6a3;
+    color: #01d6a3;
+}
+
+.btn-custom-outline-info:hover{
+    background-color: #01d6a3;
+    color: white;
 }

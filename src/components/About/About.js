@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../Shared/Header/Header';
 import './About.css'
 import about from '../../Images/single-img-two.png'
@@ -6,9 +6,17 @@ import acc1 from '../../Images/01.jpg'
 import acc2 from '../../Images/02.jpg'
 import acc3 from '../../Images/03.jpg'
 import { Accordion, Col, Row } from 'react-bootstrap';
+import Doctor from '../Doctor/Doctor';
 
 
 const About = () => {
+    const [doctors, setDoctors] = useState([])
+    useEffect(() => {
+        const url = "./doctors.json"
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setDoctors(data))
+    }, [])
     return (
         <div className="about">
             <Header></Header>
@@ -63,8 +71,23 @@ const About = () => {
                         </div>
                     </Col>
                 </Row>
+                <Row className="py-5 my-5">
+                    <p className="detail mb-0">Meet Our Experienced Team</p>
+                    <h2 className="name">Meet Our Dedicated Doctors</h2>
+                    <p className="detail">We offer extensive medical procedures to outbound and inbound patients what it is and we are very proud of achievement of our staff, We are all work together to help our all patients for recovery</p>
+                    <Row lg={4}>
+                        {
+                            doctors.map(doctor => <Doctor
+                                key={doctor.id}
+                                doctor={doctor}
+                            ></Doctor>)
+                        }
+                    </Row>
+
+                </Row>
 
             </div>
+
         </div >
     );
 };

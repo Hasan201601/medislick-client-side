@@ -13,7 +13,7 @@ const Banner = () => {
                 <p className="fs-5">Need Professional Help?Our Support staff will answer your question. <br />
                     Visit us now or make an appointment.</p>
                 <div>
-                    <button className="btn-custom btn-custom-dark">View more Details</button>
+                    <button className="btn-custom btn-custom-outline-dark">View more Details</button>
                     <button className="btn-custom btn-custom-info ms-3">Make an Appointment</button>
                 </div>
             </div>

@@ -16,9 +16,9 @@ const WhyUs = () => {
                     <p className="detail">We provide the most full medical services, so every person could have the opportunity to receive qualitative medical help.</p>
                     <p className="detail">Our Clinic has grown to provide a world class facility for the treatment of tooth loss, dental cosmetics and bore advanced restorative dentistry. We are among the most qualified implant providers in the AUS with over 30 years of quality training and experience.</p>
                     <div className="py-4">
-                        <h4 className="name py-2"><span className="why-us-icon"><i class="far fa-calendar-alt "></i></span> Online Appointment!</h4>
-                        <h4 className="name py-2"><span className="why-us-icon"><i class="fas fa-map-marker-alt"></i></span> Available at your Location</h4>
-                        <h4 className="name py-2"><span className="why-us-icon"><i class="far fa-clock"></i></span> Work Improvments</h4>
+                        <h4 className="name py-2"><span className="why-us-icon"><i className="far fa-calendar-alt "></i></span> Online Appointment!</h4>
+                        <h4 className="name py-2"><span className="why-us-icon"><i className="fas fa-map-marker-alt"></i></span> Available at your Location</h4>
+                        <h4 className="name py-2"><span className="why-us-icon"><i className="far fa-clock"></i></span> Work Improvments</h4>
                     </div>
                     <button className="btn-custom btn-custom-info">More About</button>
                 </Col>

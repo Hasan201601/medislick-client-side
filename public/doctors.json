@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co/G5xWxwT/team-img01.jpg",
+        "post": "Senior Dr of Medislick",
+        "name": "Abdul Alim"
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co/w015nt8/team-img02.jpg",
+        "post": "Cardiologist",
+        "name": "Rafiqul Islam"
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co/jZyfBRf/team-img03.jpg",
+        "post": "Neurology Specialist",
+        "name": "Shahnaj Parveen"
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co/BLLB76M/team-img04.jpg",
+        "post": "Senior Pathologist",
+        "name": "Samia Sultana"
+    }
+]

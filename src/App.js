@@ -5,6 +5,7 @@ import Home from './components/Home/Home/Home';
 import NotFound from './components/NotFound/NotFound';
 import ServiceDetail from './components/ServiceDetail/ServiceDetail';
 import About from './components/About/About';
+import Appointment from './components/Appointment/Appointment';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About></About>
+          </Route>
+          <Route path="/book">
+            <Appointment></Appointment>
           </Route>
           <Route path="/service/:serviceId">
             <ServiceDetail></ServiceDetail>
