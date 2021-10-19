@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home/Home/Home';
 import NotFound from './components/NotFound/NotFound';
 import ServiceDetail from './components/ServiceDetail/ServiceDetail';
+import About from './components/About/About';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home></Home>
+          </Route>
+          <Route path="/about">
+            <About></About>
           </Route>
           <Route path="/service/:serviceId">
             <ServiceDetail></ServiceDetail>

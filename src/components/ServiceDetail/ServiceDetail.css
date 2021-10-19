@@ -1,4 +1,11 @@
-.detail-img{
-    height: 550px;
-    object-fit: cover;
+.details{
+    font-family: 'Saira';
 }
+.detail-img{
+    object-fit: cover;
+    width: 100%;
+}
+.help{
+    background-color:#01d6a3 ;
+}
+
