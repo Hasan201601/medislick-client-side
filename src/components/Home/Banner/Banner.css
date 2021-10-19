@@ -14,6 +14,14 @@
     font-weight: 500;
     padding:10px 15px
 }
+.btn-custom-white{
+    border:1px solid white;
+    color: white;
+}
+.btn-custom-white:hover{
+    background-color: white;
+    color: #01d6a3; 
+}
 .btn-custom-dark{
     background-color: #033b4a;
     color: white;

@@ -1,0 +1,29 @@
+.form-login{
+    width: 70%;
+    font-family: 'Saira';
+}
+.separator {
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.fl-bg-gradient {
+    color: #fff;
+    background: #3db1ff;
+    background: linear-gradient(
+135deg, #3db1ff 0%, #00e3aa 100%);
+}
+.separator::before {
+    margin-right: 16px;
+}
+.separator::before, .separator::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #e4e8ef;
+    flex: 1;
+}

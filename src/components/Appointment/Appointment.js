@@ -6,7 +6,7 @@ import img1 from '../../Images/post-four-768x800.jpg'
 
 const Appointment = () => {
     return (
-        <div className="appointment">
+        <div className="appointment pt-5">
             <Header></Header>
             <div className="container pt-5">
                 <Row className="shadow-lg g-0 align-items-center">
