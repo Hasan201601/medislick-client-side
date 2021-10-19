@@ -3,12 +3,13 @@ import { Col, Form, Row } from 'react-bootstrap';
 import Header from '../Shared/Header/Header';
 import './AppoinMent.css'
 import img1 from '../../Images/post-four-768x800.jpg'
+import Footer from '../Shared/Footer/Footer';
 
 const Appointment = () => {
     return (
         <div className="appointment pt-5">
             <Header></Header>
-            <div className="container pt-5">
+            <div className="container py-5">
                 <Row className="shadow-lg g-0 align-items-center">
                     <Col md={5}>
                         <img src={img1} className="img-fluid " alt="" />
@@ -63,7 +64,6 @@ const Appointment = () => {
                     </Col>
                 </Row>
             </div >
-
         </div >
     );
 };

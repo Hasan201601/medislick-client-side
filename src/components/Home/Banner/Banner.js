@@ -12,9 +12,9 @@ const Banner = () => {
                     That you can trust</h1>
                 <p className="fs-5">Need Professional Help?Our Support staff will answer your question. <br />
                     Visit us now or make an appointment.</p>
-                <div>
-                    <button className="btn-custom btn-custom-outline-dark">View more Details</button>
-                    <button className="btn-custom btn-custom-info ms-3">Make an Appointment</button>
+                <div className="">
+                    <button className="btn-custom btn-custom-outline-dark btn-banner">View more Details</button>
+                    <button className="btn-custom btn-custom-info ms-3 ms-md-0  btn-banner">Make an Appointment</button>
                 </div>
             </div>
         </div>

@@ -5,28 +5,28 @@ import useAuth from '../../hooks/useAuth';
 import bg from '../../Images/col-bgimage-4.jpg'
 
 const Register = () => {
-    const { user, SigningInWithGoogle, userRegister, setError, handleSubmit, setIsLoading } = useAuth()
-    console.log(user)
+    const { handleRegistration, handleEmailChange, handlePasswordChange, error, handleNameChange, handleGoogleSignIn, removeError, text, setError, setIsLoading } = useAuth();
     const location = useLocation();
-    const history = useHistory()
-    const redirect_uri = location.state?.from || '/home';
-    const handleGoogleLogin = () => {
-        SigningInWithGoogle()
-            .then((result) => {
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home'
+
+    const userRegistration = e => {
+        e.preventDefault(e);
+        handleRegistration()
+            .then(result => {
+                setError('')
                 history.push(redirect_uri)
-            }).catch((error) => setError(error.message))
-            .finally(() => {
-                setIsLoading(false)
             })
-    }
-    const handleUserRegistration = () => {
-        userRegister()
-            .then((result) => {
-                history.push(redirect_uri);
-            }).catch((error) => setError(error.message))
-            .finally(() => {
-                setIsLoading(false)
+            .catch(err => {
+                if (err.code === 'auth/email-already-in-use') {
+                    setError('This email is already in use. Please select a new email')
+                }
+
             })
+            .finally(() => {
+                setIsLoading(false);
+            }
+            )
     }
     return (
         <div>
@@ -35,38 +35,35 @@ const Register = () => {
 
                     <Row className="bg-white justify-content-center flex-column flex-md-row">
                         <Col xs={12} md={6} className="p-5">
-                            <Form onSubmit={handleSubmit}>
+                            <Form onSubmit={userRegistration}>
                                 <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-                                    <Form.Control type="name" placeholder="Name" />
+                                    <Form.Control type="name" placeholder="Name" onBlur={handleNameChange} />
                                 </Form.Group>
                                 <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-                                    <Form.Control type="email" placeholder="Email" />
+                                    <Form.Control type="email" placeholder="Email" onBlur={handleEmailChange} />
                                 </Form.Group>
                                 <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-                                    <Form.Control type="password" placeholder="Password" />
+                                    <Form.Control type="password" placeholder="Password" onBlur={handlePasswordChange} />
                                 </Form.Group>
-                                <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-                                    <Form.Control type="password" placeholder="Re-enter Password" />
+                                <Form.Group as={Row} className="mb-3" >
+                                    <button type="submit" className="btn-custom btn-custom-info" >Sign Up</button>
                                 </Form.Group>
-                                <Form.Group as={Row} className="mb-3">
-                                    <button type="submit" className="btn-custom btn-custom-info" onClick={handleUserRegistration}>Sign Up</button>
-                                </Form.Group>
-                                <div class="separator">
-                                    <div class="separator-content">
+                                <div className="separator">
+                                    <div className="separator-content">
                                         <span>or</span>
                                     </div>
                                 </div>
-                                <div className="text-center pb-4 p-4 " onClick={handleGoogleLogin}>
+                                <div className="text-center pb-4 p-4 " onClick={handleGoogleSignIn}>
                                     <button className="btn-custom-outline-info">
                                         <div className="d-flex justify-content-center align-items-center" >
-                                            <div><i class="fab fa-google border"></i></div>
+                                            <div><i className="fab fa-google border"></i></div>
                                             <div>Continue With Google</div>
                                         </div>
                                     </button>
                                 </div>
-                                <Form.Group className="text-center">
+                                <Form.Group className="text-center" >
 
-                                    <span>Already have an account?</span> <NavLink to="/login"><span className="text-center name">Login</span></NavLink>
+                                    <span>Already have an account?</span> <NavLink onClick={removeError} to="/login"><span className="text-center name">Login</span></NavLink>
                                 </Form.Group>
                             </Form>
 

@@ -7,6 +7,7 @@ import acc2 from '../../Images/02.jpg'
 import acc3 from '../../Images/03.jpg'
 import { Accordion, Col, Row } from 'react-bootstrap';
 import Doctor from '../Doctor/Doctor';
+import Footer from '../Shared/Footer/Footer';
 
 
 const About = () => {
@@ -87,7 +88,7 @@ const About = () => {
                 </Row>
 
             </div>
-
+            <Footer></Footer>
         </div >
     );
 };

@@ -53,3 +53,14 @@
     background-color: #01d6a3;
     color: white;
 }
+@media screen and (max-width:792px) {
+    .banner-title{
+        color: #033b4a;
+        font-size: 2rem;
+    }
+    .btn-banner{
+        margin-left: none;
+        margin-top: 20px;
+        display: block;
+    }
+}

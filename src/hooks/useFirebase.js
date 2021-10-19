@@ -1,74 +1,107 @@
-import { useEffect, useState } from "react"
-import { GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
-import { getAuth } from "firebase/auth";
-import initializeApplication from '../firebase/firebase.init'
+import { useEffect, useState } from 'react';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import initializeAuthentication from '../firebase/firebase.init'
 
-initializeApplication()
+
+initializeAuthentication();
+const googleProvider = new GoogleAuthProvider();
+
 const useFirebase = () => {
-    const [user, setUser] = useState({});
+    const [text, setText] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+    const [user, setUser] = useState({});
+    const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState('');
-    const [isLoading, setIsLoading] = useState(true);
     const auth = getAuth();
-    const googleProvider = new GoogleAuthProvider();
+
+    const handleEmailChange = e => {
+        setEmail(e.target.value);
+    }
+    const handlePasswordChange = e => {
+        setPassword(e.target.value)
+    }
+
+
+    const handleRegistration = () => {
+        if (password.length < 6) {
+            setError('Password must be at least 6 characters long')
+        }
+        return createUserWithEmailAndPassword(auth, email, password)
+            .then(() => setUserName())
+    }
+    const handleLogin = () => {
+        return signInWithEmailAndPassword(auth, email, password)
+            .then(() => setUserName())
+    }
+    const handleNameChange = e => {
+        setName(e.target.value);
+    }
+    const logOut = () => {
+        signOut(auth)
+            .then(() => {
+                setUser('')
+            }).catch((error) => {
+                setError(error)
+            });
+    }
+    const setUserName = () => {
+        updateProfile(auth.currentUser, { displayName: name })
+            .then(result => { })
+    }
+    const handleGoogleSignIn = () => {
+        return signInWithPopup(auth, googleProvider)
+            .then(result => {
+                setUser(result.user);
+                setError('');
+            })
+            .catch(err => {
+                setError('')
+            })
+            .finally(() => {
+                setIsLoading(false);
+                setText('Login Successful')
+            })
+
+
+    }
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user?.email) {
                 setUser(user);
             }
             else {
-                setUser({});
+                setUser('');
             }
             setIsLoading(false);
         });
         return () => unsubscribe;
     }, [])
-    const handlePasswordChange = e => {
-        const changedPassword = e.target.value;
-        setPassword(changedPassword)
-    }
-    const handleEmailChange = e => {
-        const changedEmail = e.target.value;
-        setEmail(changedEmail)
-    }
-    const handleSubmit = e => {
-        e.preventDefault()
-    }
-    const SigningInWithGoogle = () => {
-        return signInWithPopup(auth, googleProvider)
 
+    const removeError = () => {
+        setError('')
+        setText('')
     }
-    const userLogin = () => {
-        return signInWithEmailAndPassword(auth, email, password)
 
-    }
-    const userRegister = () => {
-        return createUserWithEmailAndPassword(auth, email, password)
-
-    }
-    const logOut = () => {
-        signOut(auth).then(() => {
-            setUser({})
-        })
-    }
     return {
-        user,
-        setUser,
-        password,
-        setPassword,
-        SigningInWithGoogle,
-        userLogin,
-        userRegister,
-        logOut,
+        handleRegistration,
         handleEmailChange,
         handlePasswordChange,
         error,
-        setError,
-        handleSubmit,
+        handleLogin,
+        logOut,
+        isLoading,
+        user,
+        handleNameChange,
+        setUserName,
+        handleGoogleSignIn,
         setIsLoading,
-        isLoading
+        setError,
+        removeError,
+        setText,
+        text
     }
-
 }
+
 export default useFirebase;

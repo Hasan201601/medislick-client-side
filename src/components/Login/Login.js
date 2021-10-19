@@ -6,27 +6,34 @@ import './Login.css';
 import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
-    const { SigningInWithGoogle, userLogin, handleEmailChange, handlePasswordChange, setError, setIsLoading, handleSubmit } = useAuth()
+    const { handleLogin, handleEmailChange, handlePasswordChange, error, handleGoogleSignIn, removeError, setError, setIsLoading } = useAuth();
     const location = useLocation();
     const history = useHistory();
-    const redirect_uri = location.state?.from || "/home"
-    const handleGoogleLogin = () => {
-        SigningInWithGoogle()
-            .then((result) => {
-                history.push(redirect_uri)
-            }).catch((error) => setError(error.message))
-            .finally(() => {
-                setIsLoading(false)
+    const redirect_uri = location.state?.from || '/home'
+
+    const signInUsingGoogle = () => {
+        handleGoogleSignIn()
+            .then(result => {
+                history.push(redirect_uri);
             })
     }
-    const handleUserLogin = () => {
-        userLogin()
-            .then((result) => {
+
+    const userLogin = e => {
+        e.preventDefault();
+        handleLogin()
+            .then(result => {
                 history.push(redirect_uri)
-            }).catch((error) => setError(error.message))
-            .finally(() => {
-                setIsLoading(false)
             })
+            .catch(err => {
+                if (err.code === 'auth/user-not-found') {
+                    setError('User not found.Please create a new account')
+                }
+                else if (err.code === 'auth/wrong-password') {
+                    setError('Wrong password')
+                }
+
+            })
+            .finally(() => setIsLoading(false))
     }
     return (
         <div>
@@ -35,26 +42,26 @@ const Login = () => {
 
                     <Row className="bg-white justify-content-center flex-column flex-md-row">
                         <Col xs={12} md={6} className="p-5">
-                            <Form className="my-4 px-3" onClick={handleSubmit}>
+                            <Form className="my-4 px-3" onClick={{ userLogin }}>
                                 <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-                                    <Form.Control type="email" placeholder="Email" onClick={handleEmailChange} />
+                                    <Form.Control type="email" placeholder="Email" onClick={handleEmailChange} onBlur={handleEmailChange} />
                                 </Form.Group>
                                 <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-                                    <Form.Control type="password" placeholder="Password" onClick={handlePasswordChange} />
+                                    <Form.Control type="password" placeholder="Password" onBlur={handlePasswordChange} />
                                 </Form.Group>
                                 <Form.Group as={Row} className="mb-3">
-                                    <button type="submit" className="btn-custom btn-custom-info" onClick={handleUserLogin}>Login</button>
+                                    <button type="submit" className="btn-custom btn-custom-info" >Login</button>
                                 </Form.Group>
                             </Form>
-                            <div class="separator">
-                                <div class="separator-content">
+                            <div className="separator">
+                                <div className="separator-content">
                                     <span>or</span>
                                 </div>
                             </div>
                             <div className="text-center pb-4 p-4 ">
                                 <button className="btn-custom-outline-info">
-                                    <div className="d-flex justify-content-center align-items-center" onClick={handleGoogleLogin}>
-                                        <div><i class="fab fa-google border"></i></div>
+                                    <div className="d-flex justify-content-center align-items-center" onClick={signInUsingGoogle}>
+                                        <div><i className="fab fa-google border"></i></div>
                                         <div>Continue With Google</div>
                                     </div>
                                 </button>
@@ -70,7 +77,7 @@ const Login = () => {
                                     The best Medical Service
                                 </h1>
                                 <div className="text-center">
-                                    <NavLink to="/signup" className="text-decoration-none "><button className="btn-custom btn-custom-white">Sign Up</button></NavLink>
+                                    <NavLink to="/signup" onClick={removeError} className="text-decoration-none "><button className="btn-custom btn-custom-white">Sign Up</button></NavLink>
                                 </div>
                             </div>
                         </Col>
