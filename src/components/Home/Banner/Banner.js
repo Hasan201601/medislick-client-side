@@ -14,7 +14,7 @@ const Banner = () => {
                     Visit us now or make an appointment.</p>
                 <div className="">
                     <button className="btn-custom btn-custom-outline-dark btn-banner">View more Details</button>
-                    <button className="btn-custom btn-custom-info ms-3 ms-md-0  btn-banner">Make an Appointment</button>
+                    <button className="btn-custom btn-custom-info ms-md-3 ms-0  btn-banner">Make an Appointment</button>
                 </div>
             </div>
         </div>
