@@ -1,10 +1,33 @@
 import React from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import bg from '../../Images/col-bgimage-4.jpg'
-import logo from '../../Images/logo-2.png'
 
 const Register = () => {
+    const { user, SigningInWithGoogle, userRegister, setError, handleSubmit, setIsLoading } = useAuth()
+    console.log(user)
+    const location = useLocation();
+    const history = useHistory()
+    const redirect_uri = location.state?.from || '/home';
+    const handleGoogleLogin = () => {
+        SigningInWithGoogle()
+            .then((result) => {
+                history.push(redirect_uri)
+            }).catch((error) => setError(error.message))
+            .finally(() => {
+                setIsLoading(false)
+            })
+    }
+    const handleUserRegistration = () => {
+        userRegister()
+            .then((result) => {
+                history.push(redirect_uri);
+            }).catch((error) => setError(error.message))
+            .finally(() => {
+                setIsLoading(false)
+            })
+    }
     return (
         <div>
             <div className="d-flex justify-content-center align-items-center py-5" style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh', backgroundRepeat: 'no-repeat' }}>
@@ -12,7 +35,7 @@ const Register = () => {
 
                     <Row className="bg-white justify-content-center flex-column flex-md-row">
                         <Col xs={12} md={6} className="p-5">
-                            <Form>
+                            <Form onSubmit={handleSubmit}>
                                 <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
                                     <Form.Control type="name" placeholder="Name" />
                                 </Form.Group>
@@ -26,16 +49,16 @@ const Register = () => {
                                     <Form.Control type="password" placeholder="Re-enter Password" />
                                 </Form.Group>
                                 <Form.Group as={Row} className="mb-3">
-                                    <button type="submit" className="btn-custom btn-custom-info" >Sign Up</button>
+                                    <button type="submit" className="btn-custom btn-custom-info" onClick={handleUserRegistration}>Sign Up</button>
                                 </Form.Group>
                                 <div class="separator">
                                     <div class="separator-content">
                                         <span>or</span>
                                     </div>
                                 </div>
-                                <div className="text-center pb-4 p-4 ">
+                                <div className="text-center pb-4 p-4 " onClick={handleGoogleLogin}>
                                     <button className="btn-custom-outline-info">
-                                        <div className="d-flex justify-content-center align-items-center">
+                                        <div className="d-flex justify-content-center align-items-center" >
                                             <div><i class="fab fa-google border"></i></div>
                                             <div>Continue With Google</div>
                                         </div>
