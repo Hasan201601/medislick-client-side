@@ -48,6 +48,7 @@ const Register = () => {
                                 <Form.Group as={Row} className="mb-3" >
                                     <button type="submit" className="btn-custom btn-custom-info" >Sign Up</button>
                                 </Form.Group>
+                                <div className='text-danger fw-bold'>{error}</div>
                                 <div className="separator">
                                     <div className="separator-content">
                                         <span>or</span>

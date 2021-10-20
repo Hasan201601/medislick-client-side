@@ -9,6 +9,7 @@ import useAuth from '../../../hooks/useAuth';
 const Header = () => {
     const { user, logOut } = useAuth()
     console.log(user)
+    console.log(user)
     const history = useHistory();
     const handleHome = () => {
         history.push('/home')

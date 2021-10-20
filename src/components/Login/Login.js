@@ -19,6 +19,7 @@ const Login = () => {
     }
 
     const userLogin = e => {
+
         e.preventDefault();
         handleLogin()
             .then(result => {
@@ -34,6 +35,7 @@ const Login = () => {
 
             })
             .finally(() => setIsLoading(false))
+
     }
 
     return (
@@ -55,7 +57,7 @@ const Login = () => {
                                     <button type="submit" className="btn-custom btn-custom-info" >Login</button>
                                 </Form.Group>
                             </Form>
-                            <div className='text-danger fw-bold pt-5'>{error}</div>
+                            <div className='text-danger fw-bold'>{error}</div>
                             <div className="separator">
                                 <div className="separator-content">
                                     <span>or</span>
