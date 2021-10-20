@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import initializeAuthentication from '../firebase/firebase.init'
+import initializeApplication from '../firebase/firebase.init';
 
 
-initializeAuthentication();
+initializeApplication();
 const googleProvider = new GoogleAuthProvider();
 
 const useFirebase = () => {
@@ -27,6 +27,7 @@ const useFirebase = () => {
     const handleRegistration = () => {
         if (password.length < 6) {
             setError('Password must be at least 6 characters long')
+            return
         }
         return createUserWithEmailAndPassword(auth, email, password)
             .then(() => setUserName())
@@ -41,9 +42,9 @@ const useFirebase = () => {
     const logOut = () => {
         signOut(auth)
             .then(() => {
-                setUser('')
+                setUser({})
             }).catch((error) => {
-                setError(error)
+                setError(error.message)
             });
     }
     const setUserName = () => {
@@ -56,7 +57,7 @@ const useFirebase = () => {
                 setUser(result.user);
                 setError('');
             })
-            .catch(err => {
+            .catch(error => {
                 setError('')
             })
             .finally(() => {
@@ -72,7 +73,7 @@ const useFirebase = () => {
                 setUser(user);
             }
             else {
-                setUser('');
+                setUser({});
             }
             setIsLoading(false);
         });

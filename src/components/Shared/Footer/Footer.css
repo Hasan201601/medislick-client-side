@@ -4,3 +4,18 @@
 .footer{
     font-family: 'Saira';
 }
+.copyright{
+    font-family: 'Saira';
+    background-color: #013340;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+.time-table{
+    width: 75%;
+}
+@media screen and (max-width:1400px) {
+    .time-table{
+        width: 100%;
+    }
+}

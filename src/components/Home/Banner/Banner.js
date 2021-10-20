@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import banner from '../../../Images/slider-mainbg-005.jpg';
 import './Banner.css'
 
@@ -13,8 +14,12 @@ const Banner = () => {
                 <p className="fs-5">Need Professional Help?Our Support staff will answer your question. <br />
                     Visit us now or make an appointment.</p>
                 <div className="">
-                    <button className="btn-custom btn-custom-outline-dark btn-banner">View more Details</button>
-                    <button className="btn-custom btn-custom-info ms-md-3 ms-0  btn-banner">Make an Appointment</button>
+                    <Link to="/about" className="text-decoration-none">
+                        <button className="btn-custom btn-custom-outline-dark btn-banner">View more Details</button>
+                    </Link>
+                    <Link to="/book" className="text-decoration-none">
+                        <button className="btn-custom btn-custom-info ms-md-3 ms-0  btn-banner">Make an Appointment</button>
+                    </Link>
                 </div>
             </div>
         </div>

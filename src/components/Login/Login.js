@@ -3,7 +3,7 @@ import { NavLink, useLocation, useHistory } from "react-router-dom";
 import bg from '../../Images/col-bgimage-4.jpg'
 import React from 'react';
 import './Login.css';
-import useAuth from "../../hooks/useAuth";
+import useAuth from '../../hooks/useAuth'
 
 const Login = () => {
     const { handleLogin, handleEmailChange, handlePasswordChange, error, handleGoogleSignIn, removeError, setError, setIsLoading } = useAuth();
@@ -35,14 +35,16 @@ const Login = () => {
             })
             .finally(() => setIsLoading(false))
     }
+
     return (
         <div>
+
             <div className="d-flex justify-content-center align-items-center py-5" style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh', backgroundRepeat: 'no-repeat' }}>
                 <div className="shadow-lg form-login" >
 
                     <Row className="bg-white justify-content-center flex-column flex-md-row">
                         <Col xs={12} md={6} className="p-5">
-                            <Form className="my-4 px-3" onClick={{ userLogin }}>
+                            <Form className="my-4 px-3" onSubmit={userLogin}>
                                 <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
                                     <Form.Control type="email" placeholder="Email" onClick={handleEmailChange} onBlur={handleEmailChange} />
                                 </Form.Group>
@@ -53,6 +55,7 @@ const Login = () => {
                                     <button type="submit" className="btn-custom btn-custom-info" >Login</button>
                                 </Form.Group>
                             </Form>
+                            <div className='text-danger fw-bold pt-5'>{error}</div>
                             <div className="separator">
                                 <div className="separator-content">
                                     <span>or</span>
@@ -66,10 +69,12 @@ const Login = () => {
                                     </div>
                                 </button>
                             </div>
-
+                            <div className="d-block d-md-none text-center">
+                                Don't have an account?<NavLink to="/signup" onClick={removeError} className="text-decoration-none ">Sign Up</NavLink>
+                            </div>
 
                         </Col>
-                        <Col xs={12} md={6} className="fl-bg-gradient text-center">
+                        <Col xs={12} md={6} className="fl-bg-gradient text-center d-none d-md-block">
 
                             <div className="p-4">
                                 <h1 className="pt-4">Don't have an account?</h1>

@@ -63,13 +63,13 @@ const Register = () => {
                                 </div>
                                 <Form.Group className="text-center" >
 
-                                    <span>Already have an account?</span> <NavLink onClick={removeError} to="/login"><span className="text-center name">Login</span></NavLink>
+                                    <span>Already have an account?</span> <NavLink onClick={removeError} to="/login" className="text-decoration-none"><span className="text-center">Login</span></NavLink>
                                 </Form.Group>
                             </Form>
 
 
                         </Col>
-                        <Col xs={12} md={6} className="fl-bg-gradient">
+                        <Col xs={12} md={6} className="fl-bg-gradient d-none d-md-block">
 
                             <div className="py-4  d-flex">
                                 <div className="p-4">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, ListGroup, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import whyUs from '../../../Images/whyus.png'
 import './WhyUs.css'
 
@@ -20,7 +21,9 @@ const WhyUs = () => {
                         <h4 className="name py-2"><span className="why-us-icon"><i className="fas fa-map-marker-alt"></i></span> Available at your Location</h4>
                         <h4 className="name py-2"><span className="why-us-icon"><i className="far fa-clock"></i></span> Work Improvments</h4>
                     </div>
-                    <button className="btn-custom btn-custom-info">More About</button>
+                    <Link to="/about" className="text-decoration-none">
+                        <button className="btn-custom btn-custom-outline-dark btn-banner">More About</button>
+                    </Link>
                 </Col>
             </Row>
         </div >
