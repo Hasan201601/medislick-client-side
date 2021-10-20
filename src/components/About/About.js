@@ -19,10 +19,10 @@ const About = () => {
             .then(data => setDoctors(data))
     }, [])
     return (
-        <div className="about">
+        <div className="about" id="about">
             <Header></Header>
-            <div className="container pt-5 mt-5">
-                <Row className="px-5">
+            <div className="container pt-5 mt-5" id="about">
+                <Row className="px-5" >
                     <Col lg={4}>
                         <img src={about} className="img-thumbnail img-fluid" alt="" />
                     </Col>

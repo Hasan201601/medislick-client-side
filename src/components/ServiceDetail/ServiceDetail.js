@@ -14,7 +14,7 @@ const ServiceDetail = () => {
 
 
     return (
-        <div className="pt-5">
+        <div className="pt-5" >
             <Header></Header>
             <div className="py-5 container details">
 

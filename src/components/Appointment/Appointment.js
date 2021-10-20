@@ -24,19 +24,19 @@ const Appointment = () => {
                             <Row>
 
                                 <Col xs={6}>
-                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                    <Form.Group className="mb-3" controlId="formName">
 
-                                        <Form.Control type="email" placeholder="Enter email" />
+                                        <Form.Control type="name" placeholder="Full Name" />
 
                                     </Form.Group>
 
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
 
-                                        <Form.Control type="password" placeholder="Password" />
+                                        <Form.Control type="text" placeholder="Phone Number" />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
 
-                                        <Form.Control type="password" placeholder="Password" />
+                                        <Form.Control type="date" placeholder="Appointment Date" />
                                     </Form.Group>
 
                                 </Col>
@@ -53,7 +53,7 @@ const Appointment = () => {
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
 
-                                        <Form.Control type="password" placeholder="Password" />
+                                        <Form.Control type="time" placeholder="Appointment Time" />
                                     </Form.Group>
                                 </Col>
                                 <button className="btn-custom-dark btn-custom" type="submit">Get a Free Quote</button>
