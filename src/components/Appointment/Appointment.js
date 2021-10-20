@@ -28,7 +28,7 @@ const Appointment = () => {
                                 <Col xs={6}>
                                     <Form.Group className="mb-3" controlId="formName">
 
-                                        <Form.Control type="name" placeholder={user.email ? user?.displayName : "Full Name"} disabled />
+                                        <Form.Control type="name" placeholder={user.email ? user?.displayName : "Full Name"} />
 
                                     </Form.Group>
 
@@ -45,7 +45,7 @@ const Appointment = () => {
                                 <Col xs={6}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
 
-                                        <Form.Control type="email" placeholder={user.email ? user?.email : "Email Address"} disabled />
+                                        <Form.Control type="email" placeholder={user.email ? user?.email : "Email Address"} />
 
                                     </Form.Group>
 
