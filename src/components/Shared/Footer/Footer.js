@@ -64,8 +64,8 @@ const Footer = () => {
                             <div className='d-flex align-items-center mb-2'>
                                 <i className="fas fa-map-marker-alt px-4"></i>
                                 <span>
-                                    <p className="m-0">2130 Fulton Street San</p>
-                                    <p className="m-0">Diego CA 94117-1080 USA</p>
+                                    <p className="m-0">34 Taltola Road</p>
+                                    <p className="m-0">Sadar, Tottenham 1234 BD</p>
                                 </span>
                             </div>
                             <div className='d-flex align-items-center mb-2'>

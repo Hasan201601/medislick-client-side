@@ -54,7 +54,7 @@ const ServiceDetail = () => {
                                     <p className="m-0">34 Taltola Road</p>
                                     <p>Sadar, Tottenham</p>
                                     <p>1234,BD</p>
-                                    <p>abc@gmail.com</p>
+                                    <p>info@gmail.com</p>
                                 </div>
                             </Col>
                         </Row>
