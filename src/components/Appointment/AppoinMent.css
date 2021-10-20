@@ -1,3 +1,6 @@
 .appointment{
     font-family: 'Saira';
 }
+#book-form input[type="name"]::placeholder,#book-form input[type="email"]::placeholder{
+    color: black;
+}

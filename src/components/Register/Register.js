@@ -9,7 +9,13 @@ const Register = () => {
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/home'
-
+    const signInUsingGoogle = e => {
+        e.preventDefault()
+        handleGoogleSignIn()
+            .then(result => {
+                history.push(redirect_uri);
+            })
+    }
     const userRegistration = e => {
         e.preventDefault(e);
         handleRegistration()
@@ -34,8 +40,8 @@ const Register = () => {
                 <div className="shadow-lg form-login" >
 
                     <Row className="bg-white justify-content-center flex-column flex-md-row">
-                        <Col xs={12} md={6} className="p-5">
-                            <Form onSubmit={userRegistration}>
+                        <Col xs={12} md={6} className="p-lg-5 p-md-2 pt-2 pb-4 py-md-0">
+                            <Form className="my-4 px-3 px-md-3" onSubmit={userRegistration}>
                                 <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
                                     <Form.Control type="name" placeholder="Name" onBlur={handleNameChange} />
                                 </Form.Group>
@@ -54,18 +60,18 @@ const Register = () => {
                                         <span>or</span>
                                     </div>
                                 </div>
-                                <div className="text-center pb-4 p-4 " onClick={handleGoogleSignIn}>
-                                    <button className="btn-custom-outline-info">
+                                <div className="text-center pb-4 p-4" >
+                                    <button className="btn-custom-outline-info" onClick={signInUsingGoogle}>
                                         <div className="d-flex justify-content-center align-items-center" >
                                             <div><i className="fab fa-google border"></i></div>
                                             <div>Continue With Google</div>
                                         </div>
                                     </button>
                                 </div>
-                                <Form.Group className="text-center" >
+                                <div className="text-center" >
 
                                     <span>Already have an account?</span> <NavLink onClick={removeError} to="/login" className="text-decoration-none"><span className="text-center">Login</span></NavLink>
-                                </Form.Group>
+                                </div>
                             </Form>
 
 

@@ -11,7 +11,8 @@ const Login = () => {
     const history = useHistory();
     const redirect_uri = location.state?.from || '/home'
 
-    const signInUsingGoogle = () => {
+    const signInUsingGoogle = e => {
+        e.preventDefault()
         handleGoogleSignIn()
             .then(result => {
                 history.push(redirect_uri);
@@ -19,7 +20,6 @@ const Login = () => {
     }
 
     const userLogin = e => {
-
         e.preventDefault();
         handleLogin()
             .then(result => {
@@ -45,8 +45,8 @@ const Login = () => {
                 <div className="shadow-lg form-login" >
 
                     <Row className="bg-white justify-content-center flex-column flex-md-row">
-                        <Col xs={12} md={6} className="p-5">
-                            <Form className="my-4 px-3" onSubmit={userLogin}>
+                        <Col xs={12} md={6} className="p-lg-5 p-md-2 pt-2 pb-4 py-md-0">
+                            <Form className="my-4 px-3 px-md-3" onSubmit={userLogin}>
                                 <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
                                     <Form.Control type="email" placeholder="Email" onClick={handleEmailChange} onBlur={handleEmailChange} />
                                 </Form.Group>
@@ -63,7 +63,7 @@ const Login = () => {
                                     <span>or</span>
                                 </div>
                             </div>
-                            <div className="text-center pb-4 p-4 ">
+                            <div className="text-center pb-4">
                                 <button className="btn-custom-outline-info">
                                     <div className="d-flex justify-content-center align-items-center" onClick={signInUsingGoogle}>
                                         <div><i className="fab fa-google border"></i></div>

@@ -4,8 +4,10 @@ import Header from '../Shared/Header/Header';
 import './AppoinMent.css'
 import img1 from '../../Images/post-four-768x800.jpg'
 import Footer from '../Shared/Footer/Footer';
+import useAuth from '../../hooks/useAuth';
 
 const Appointment = () => {
+    const { user } = useAuth();
     return (
         <div className="appointment pt-5">
             <Header></Header>
@@ -20,13 +22,13 @@ const Appointment = () => {
                             <p className="detail">Make an Appointment
                                 Contact us any suitable way and make an appointment with the doctor whose help you need!Visit us at the scheduled time.</p>
                         </div>
-                        <Form>
+                        <Form id="book-form">
                             <Row>
 
                                 <Col xs={6}>
                                     <Form.Group className="mb-3" controlId="formName">
 
-                                        <Form.Control type="name" placeholder="Full Name" />
+                                        <Form.Control type="name" placeholder={user.email ? user?.displayName : "Full Name"} />
 
                                     </Form.Group>
 
@@ -43,7 +45,7 @@ const Appointment = () => {
                                 <Col xs={6}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
 
-                                        <Form.Control type="email" placeholder="Enter email" />
+                                        <Form.Control type="email" placeholder={user.email ? user?.email : "Email Address"} />
 
                                     </Form.Group>
 
